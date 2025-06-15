@@ -188,15 +188,6 @@ const Index = () => {
             title="Top 100 Songs presentation"
           ></iframe>
         </div>
-        <a
-          href="https://www.canva.com/design/DAGpndym3Ps/E4306odxyzfoGBB7IARBkA/view?utm_content=DAGpndym3Ps&utm_campaign=designshare&utm_medium=embeds&utm_source=link"
-          target="_blank"
-          rel="noopener"
-          className="block text-green-200 hover:text-green-400 underline mb-8 text-center"
-        >
-          Top 100 Songs
-        </a>
-        <div className="text-xs text-zinc-500 text-center pb-2">by abyogia</div>
       </div>
 
       <footer className="bg-zinc-950 border-t border-zinc-800 py-8">
