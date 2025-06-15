@@ -4,6 +4,7 @@ import { useAudioPlayer } from '../hooks/useAudioPlayer';
 
 interface AudioPlayerContextType {
   isPlaying: boolean;
+  isLoading: boolean;
   currentTrack: number | null;
   playTrack: (trackId: number, audioUrl?: string) => void;
   stopTrack: () => void;

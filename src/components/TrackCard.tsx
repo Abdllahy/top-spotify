@@ -1,5 +1,5 @@
 
-import { Play, Heart, Pause } from 'lucide-react';
+import { Play, Heart, Pause, Loader2 } from 'lucide-react';
 import { useAudioPlayerContext } from '../contexts/AudioPlayerContext';
 
 interface TrackCardProps {
@@ -12,24 +12,25 @@ interface TrackCardProps {
 }
 
 const TrackCard = ({ rank, title, artist, album, genre, streams }: TrackCardProps) => {
-  const { isPlaying, currentTrack, playTrack } = useAudioPlayerContext();
+  const { isPlaying, isLoading, currentTrack, playTrack } = useAudioPlayerContext();
   
   const isCurrentTrack = currentTrack === rank;
   const isCurrentlyPlaying = isCurrentTrack && isPlaying;
+  const isCurrentlyLoading = isCurrentTrack && isLoading;
 
-  // Using actual playable music URLs from Internet Archive
+  // Using more reliable audio URLs
   const getAudioUrl = (trackRank: number) => {
     const audioUrls = [
-      'https://archive.org/download/SampleAudio0724/SampleAudio_0.2mb_mp3.mp3',
-      'https://archive.org/download/testmp3testfile/mpthreetest.mp3',
-      'https://www.soundjay.com/misc/sounds/bell-ringing-05.wav',
-      'https://archive.org/download/Example_Ogg/example.ogg',
       'https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3',
-      'https://sample-videos.com/zip/10/mp3/SampleAudio_0.4mb_mp3.mp3',
+      'https://archive.org/download/testmp3testfile/mpthreetest.mp3',
+      'https://archive.org/download/SampleAudio0724/SampleAudio_0.2mb_mp3.mp3',
+      'https://www.soundjay.com/misc/sounds/bell-ringing-05.wav',
+      'https://archive.org/download/testmp3testfile/SampleAudio_0.7mb_mp3.mp3',
       'https://www.soundjay.com/misc/sounds/fail-buzzer-02.wav',
-      'https://archive.org/download/testmp3testfile/SampleAudio_0.7mb_mp3.mp3'
+      'https://sample-videos.com/zip/10/mp3/SampleAudio_0.4mb_mp3.mp3',
+      'https://archive.org/download/Example_Ogg/example.ogg'
     ];
-    return audioUrls[trackRank % audioUrls.length];
+    return audioUrls[(trackRank - 1) % audioUrls.length];
   };
 
   const handlePlayClick = () => {
@@ -44,13 +45,18 @@ const TrackCard = ({ rank, title, artist, album, genre, streams }: TrackCardProp
         <div className="flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
           <button 
             onClick={handlePlayClick}
+            disabled={isCurrentlyLoading}
             className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${
               isCurrentlyPlaying 
                 ? 'bg-green-600 hover:bg-green-700' 
+                : isCurrentlyLoading
+                ? 'bg-yellow-500'
                 : 'bg-green-500 hover:bg-green-600'
-            }`}
+            } ${isCurrentlyLoading ? 'cursor-not-allowed' : 'cursor-pointer'}`}
           >
-            {isCurrentlyPlaying ? (
+            {isCurrentlyLoading ? (
+              <Loader2 className="w-4 h-4 text-black animate-spin" />
+            ) : isCurrentlyPlaying ? (
               <Pause className="w-4 h-4 text-black" />
             ) : (
               <Play className="w-4 h-4 text-black ml-0.5" />
@@ -63,7 +69,7 @@ const TrackCard = ({ rank, title, artist, album, genre, streams }: TrackCardProp
       </div>
       
       <h3 className={`font-semibold text-lg mb-1 line-clamp-2 transition-colors ${
-        isCurrentlyPlaying ? 'text-green-400' : 'text-white'
+        isCurrentlyPlaying ? 'text-green-400' : isCurrentlyLoading ? 'text-yellow-400' : 'text-white'
       }`}>
         {title}
       </h3>
@@ -84,15 +90,19 @@ const TrackCard = ({ rank, title, artist, album, genre, streams }: TrackCardProp
         )}
       </div>
       
-      {isCurrentlyPlaying && (
+      {(isCurrentlyPlaying || isCurrentlyLoading) && (
         <div className="mt-2 flex items-center space-x-2">
-          <div className="flex space-x-1">
-            <div className="w-1 h-3 bg-green-400 animate-pulse"></div>
-            <div className="w-1 h-2 bg-green-400 animate-pulse" style={{ animationDelay: '0.1s' }}></div>
-            <div className="w-1 h-4 bg-green-400 animate-pulse" style={{ animationDelay: '0.2s' }}></div>
-            <div className="w-1 h-2 bg-green-400 animate-pulse" style={{ animationDelay: '0.3s' }}></div>
-          </div>
-          <span className="text-xs text-green-400">Now Playing</span>
+          {isCurrentlyPlaying && (
+            <div className="flex space-x-1">
+              <div className="w-1 h-3 bg-green-400 animate-pulse"></div>
+              <div className="w-1 h-2 bg-green-400 animate-pulse" style={{ animationDelay: '0.1s' }}></div>
+              <div className="w-1 h-4 bg-green-400 animate-pulse" style={{ animationDelay: '0.2s' }}></div>
+              <div className="w-1 h-2 bg-green-400 animate-pulse" style={{ animationDelay: '0.3s' }}></div>
+            </div>
+          )}
+          <span className={`text-xs ${isCurrentlyPlaying ? 'text-green-400' : 'text-yellow-400'}`}>
+            {isCurrentlyLoading ? 'Loading...' : 'Now Playing'}
+          </span>
         </div>
       )}
     </div>
