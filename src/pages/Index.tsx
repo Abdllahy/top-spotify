@@ -1,8 +1,8 @@
-
 import { Music } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import TrackCard from '@/components/TrackCard';
+import React, { useState } from 'react';
 
 // Manually mapped from user data. Genres are set to 'Pop' unless clearly another genre.
 const tracks = [
@@ -109,6 +109,10 @@ const tracks = [
 ];
 
 const Index = () => {
+  const [showAll, setShowAll] = useState(false);
+
+  const visibleTracks = showAll ? tracks : tracks.slice(0, 10);
+
   return (
     <div className="min-h-screen bg-black">
       <Navbar />
@@ -125,7 +129,7 @@ const Index = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {tracks.map((track) => (
+          {visibleTracks.map((track) => (
             <TrackCard
               key={track.rank}
               rank={track.rank}
@@ -135,6 +139,17 @@ const Index = () => {
               genre={track.genre}
             />
           ))}
+        </div>
+
+        <div className="flex justify-center mt-8">
+          {tracks.length > 10 && (
+            <button
+              className="px-6 py-2 bg-green-500 text-white font-semibold rounded-md hover:bg-green-600 transition"
+              onClick={() => setShowAll(!showAll)}
+            >
+              {showAll ? "Show Less" : "Show More"}
+            </button>
+          )}
         </div>
       </div>
 
