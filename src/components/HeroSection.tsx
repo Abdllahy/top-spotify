@@ -1,4 +1,3 @@
-
 import { Play, TrendingUp, Headphones, Music } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from "react-router-dom";
@@ -11,8 +10,19 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-black/40"></div>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
-            Top 100 Songs
+          <h1
+            className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent 
+              drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)] 
+              relative inline-block 
+              px-2
+              "
+            style={{
+              WebkitTextStroke: "1px rgba(0,0,0,0.15)",
+            }}
+          >
+            <span className="block md:inline bg-black/30 rounded px-2 py-0.5 md:bg-transparent md:px-0 md:py-0">
+              Top 100 Songs
+            </span>
           </h1>
           <h2 className="text-3xl md:text-4xl font-semibold mb-4">
             of 2024
@@ -75,4 +85,3 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-
