@@ -1,4 +1,5 @@
 
+import { Music } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import TrackCard from '@/components/TrackCard';

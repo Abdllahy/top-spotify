@@ -1,5 +1,5 @@
 
-import { Play, TrendingUp, Headphones } from 'lucide-react';
+import { Play, TrendingUp, Headphones, Music } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
