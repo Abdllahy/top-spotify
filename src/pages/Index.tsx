@@ -1,4 +1,3 @@
-
 import { Music } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
@@ -7,14 +6,14 @@ import TrackCard from '@/components/TrackCard';
 const Index = () => {
   // Sample data for demonstration
   const sampleTracks = [
-    { rank: 1, title: "Anti-Hero", artist: "Taylor Swift", album: "Midnights", genre: "Pop", streams: "2.1B" },
-    { rank: 2, title: "As It Was", artist: "Harry Styles", album: "Harry's House", genre: "Pop", streams: "1.9B" },
-    { rank: 3, title: "Heat Waves", artist: "Glass Animals", album: "Dreamland", genre: "Indie", streams: "1.8B" },
-    { rank: 4, title: "Unholy", artist: "Sam Smith ft. Kim Petras", album: "Gloria", genre: "Pop", streams: "1.7B" },
-    { rank: 5, title: "Bad Habit", artist: "Steve Lacy", album: "Gemini Rights", genre: "R&B", streams: "1.6B" },
-    { rank: 6, title: "Flowers", artist: "Miley Cyrus", album: "Endless Summer Vacation", genre: "Pop", streams: "1.5B" },
-    { rank: 7, title: "Creepin'", artist: "Metro Boomin, The Weeknd, 21 Savage", album: "Heroes & Villains", genre: "Hip-Hop", streams: "1.4B" },
-    { rank: 8, title: "Kill Bill", artist: "SZA", album: "SOS", genre: "R&B", streams: "1.3B" }
+    { rank: 1, title: "Birds of a Feather", artist: "Billie Eilish", album: "Hit Me Hard and Soft", genre: "Pop", streams: "1.2B" },
+    { rank: 2, title: "Anti-Hero", artist: "Taylor Swift", album: "Midnights", genre: "Pop", streams: "2.1B" },
+    { rank: 3, title: "As It Was", artist: "Harry Styles", album: "Harry's House", genre: "Pop", streams: "1.9B" },
+    { rank: 4, title: "Heat Waves", artist: "Glass Animals", album: "Dreamland", genre: "Indie", streams: "1.8B" },
+    { rank: 5, title: "Unholy", artist: "Sam Smith ft. Kim Petras", album: "Gloria", genre: "Pop", streams: "1.7B" },
+    { rank: 6, title: "Bad Habit", artist: "Steve Lacy", album: "Gemini Rights", genre: "R&B", streams: "1.6B" },
+    { rank: 7, title: "Flowers", artist: "Miley Cyrus", album: "Endless Summer Vacation", genre: "Pop", streams: "1.5B" },
+    { rank: 8, title: "Creepin'", artist: "Metro Boomin, The Weeknd, 21 Savage", album: "Heroes & Villains", genre: "Hip-Hop", streams: "1.4B" }
   ];
 
   return (
@@ -53,7 +52,6 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Footer */}
       <footer className="bg-zinc-950 border-t border-zinc-800 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex items-center justify-center space-x-3 mb-4">
