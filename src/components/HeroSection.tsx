@@ -1,3 +1,4 @@
+
 import { Play, TrendingUp, Headphones, Music } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from "react-router-dom";
@@ -26,6 +27,49 @@ const HeroSection = () => {
               Top 100 Songs
             </span>
           </h1>
+
+          {/* Canva Embed start */}
+          <div style={{
+            position: "relative",
+            width: "100%",
+            height: 0,
+            paddingTop: '56.2500%',
+            paddingBottom: 0,
+            boxShadow: "0 2px 8px 0 rgba(63,69,81,0.16)",
+            marginTop: "1.6em",
+            marginBottom: "0.9em",
+            overflow: "hidden",
+            borderRadius: "8px",
+            willChange: "transform"
+          }}>
+            <iframe
+              loading="lazy"
+              style={{
+                position: "absolute",
+                width: "100%",
+                height: "100%",
+                top: 0,
+                left: 0,
+                border: "none",
+                padding: 0,
+                margin: 0
+              }}
+              src="https://www.canva.com/design/DAGpndym3Ps/E4306odxyzfoGBB7IARBkA/view?embed"
+              allowFullScreen
+              allow="fullscreen"
+              title="Top 100 Songs presentation"
+            ></iframe>
+          </div>
+          <a
+            href="https://www.canva.com/design/DAGpndym3Ps/E4306odxyzfoGBB7IARBkA/view?utm_content=DAGpndym3Ps&utm_campaign=designshare&utm_medium=embeds&utm_source=link"
+            target="_blank"
+            rel="noopener"
+            className="block text-green-200 hover:text-green-400 underline mb-8"
+          >
+            Top 100 Songs
+          </a>
+          {/* Canva Embed end */}
+
           <h2 className="text-3xl md:text-4xl font-semibold mb-4">
             of 2024
           </h2>
