@@ -1,4 +1,3 @@
-
 import { Play, TrendingUp, Headphones, Music } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useNavigate } from "react-router-dom";
@@ -23,7 +22,7 @@ const HeroSection = () => {
               WebkitTextStroke: "1px rgba(0,0,0,0.15)",
             }}
           >
-            <span className="block align-middle bg-black/30 rounded px-2 py-2">
+            <span className="block align-middle rounded px-2 py-2">
               Top 100 Songs
             </span>
           </h1>
