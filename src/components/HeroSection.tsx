@@ -1,8 +1,11 @@
 
 import { Play, TrendingUp, Headphones, Music } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="relative bg-gradient-to-br from-purple-900 via-blue-900 to-green-900 text-white">
       <div className="absolute inset-0 bg-black/40"></div>
@@ -20,11 +23,21 @@ const HeroSection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button className="bg-green-500 hover:bg-green-600 text-black font-semibold px-8 py-3 rounded-full flex items-center space-x-2">
+            <Button
+              className="bg-green-500 hover:bg-green-600 text-black font-semibold px-8 py-3 rounded-full flex items-center space-x-2 shadow-lg transition"
+              onClick={() => navigate("/")}
+            >
               <Play className="w-5 h-5" />
               <span>Explore Top Tracks</span>
             </Button>
-            <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 px-8 py-3 rounded-full flex items-center space-x-2">
+            <Button
+              variant="ghost"
+              className="!bg-gradient-to-r !from-blue-700 !via-purple-600 !to-green-500 !text-white hover:from-green-500 hover:to-blue-700 px-8 py-3 rounded-full flex items-center space-x-2 border-none shadow-lg transition"
+              onClick={() => navigate("/analysis")}
+              style={{
+                background: "linear-gradient(90deg, #2563eb 0%, #9333ea 60%, #22c55e 100%)",
+              }}
+            >
               <TrendingUp className="w-5 h-5" />
               <span>View Analysis</span>
             </Button>
@@ -62,3 +75,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
