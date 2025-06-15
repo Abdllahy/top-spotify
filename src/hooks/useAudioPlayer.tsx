@@ -10,53 +10,82 @@ export const useAudioPlayer = () => {
   const playTrack = (trackId: number, audioUrl?: string) => {
     console.log('Playing track:', trackId, 'URL:', audioUrl);
     
-    if (currentTrack === trackId && isPlaying) {
+    if (currentTrack === trackId && isPlaying && audioRef.current) {
       // Pause current track
-      audioRef.current?.pause();
+      audioRef.current.pause();
       setIsPlaying(false);
       setIsLoading(false);
       console.log('Paused current track');
     } else {
       // Play new track or resume
-      if (currentTrack !== trackId && audioUrl) {
+      if (currentTrack !== trackId && audioUrl && audioRef.current) {
         setIsLoading(true);
         setIsPlaying(false);
         setCurrentTrack(trackId);
         
-        if (audioRef.current) {
-          // Stop current audio to prevent AbortError
-          audioRef.current.pause();
-          audioRef.current.currentTime = 0;
-          
-          audioRef.current.src = audioUrl;
-          audioRef.current.load();
-          console.log('Loading new audio source:', audioUrl);
+        // Stop current audio
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+        
+        // Set new source
+        audioRef.current.src = audioUrl;
+        console.log('Loading new audio source:', audioUrl);
+        
+        // Try to play immediately
+        audioRef.current.load();
+        
+        const playPromise = audioRef.current.play();
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {
+              console.log('Successfully started playing');
+              setIsPlaying(true);
+              setIsLoading(false);
+            })
+            .catch((error) => {
+              console.error('Error playing audio:', error);
+              setIsPlaying(false);
+              setIsLoading(false);
+              // Try a fallback approach
+              setTimeout(() => {
+                if (audioRef.current) {
+                  audioRef.current.play()
+                    .then(() => {
+                      console.log('Fallback play successful');
+                      setIsPlaying(true);
+                      setIsLoading(false);
+                    })
+                    .catch(e => {
+                      console.error('Fallback play failed:', e);
+                      setIsLoading(false);
+                    });
+                }
+              }, 500);
+            });
         }
-      } else if (currentTrack === trackId) {
+      } else if (currentTrack === trackId && audioRef.current) {
         // Resume same track
         setIsLoading(true);
+        const playPromise = audioRef.current.play();
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {
+              setIsPlaying(true);
+              setIsLoading(false);
+            })
+            .catch((error) => {
+              console.error('Error resuming audio:', error);
+              setIsPlaying(false);
+              setIsLoading(false);
+            });
+        }
       }
-      
-      // Add a small delay to ensure the audio is ready
-      setTimeout(() => {
-        audioRef.current?.play()
-          .then(() => {
-            setIsPlaying(true);
-            setIsLoading(false);
-            console.log('Successfully started playing');
-          })
-          .catch((error) => {
-            console.error('Error playing audio:', error);
-            setIsPlaying(false);
-            setIsLoading(false);
-          });
-      }, 100);
     }
   };
 
   const stopTrack = () => {
-    audioRef.current?.pause();
     if (audioRef.current) {
+      audioRef.current.pause();
       audioRef.current.currentTime = 0;
     }
     setIsPlaying(false);
@@ -67,8 +96,9 @@ export const useAudioPlayer = () => {
 
   useEffect(() => {
     const audio = new Audio();
-    audio.volume = 0.7;
-    audio.preload = 'metadata';
+    audio.volume = 0.5; // Reduced volume for better UX
+    audio.preload = 'auto';
+    audio.crossOrigin = 'anonymous';
     audioRef.current = audio;
 
     const handleEnded = () => {
@@ -96,21 +126,38 @@ export const useAudioPlayer = () => {
 
     const handleLoadedData = () => {
       console.log('Audio data loaded');
+    };
+
+    const handlePlaying = () => {
+      console.log('Audio is playing');
+      setIsPlaying(true);
       setIsLoading(false);
     };
 
+    const handlePause = () => {
+      console.log('Audio paused');
+      setIsPlaying(false);
+      setIsLoading(false);
+    };
+
+    // Add all event listeners
     audio.addEventListener('ended', handleEnded);
     audio.addEventListener('error', handleError);
     audio.addEventListener('canplay', handleCanPlay);
     audio.addEventListener('loadstart', handleLoadStart);
     audio.addEventListener('loadeddata', handleLoadedData);
+    audio.addEventListener('playing', handlePlaying);
+    audio.addEventListener('pause', handlePause);
 
     return () => {
+      // Clean up event listeners
       audio.removeEventListener('ended', handleEnded);
       audio.removeEventListener('error', handleError);
       audio.removeEventListener('canplay', handleCanPlay);
       audio.removeEventListener('loadstart', handleLoadStart);
       audio.removeEventListener('loadeddata', handleLoadedData);
+      audio.removeEventListener('playing', handlePlaying);
+      audio.removeEventListener('pause', handlePause);
       audio.pause();
     };
   }, []);
