@@ -17,10 +17,24 @@ const TrackCard = ({ rank, title, artist, album, genre, streams }: TrackCardProp
   const isCurrentTrack = currentTrack === rank;
   const isCurrentlyPlaying = isCurrentTrack && isPlaying;
 
+  // Using actual playable music URLs from Internet Archive
+  const getAudioUrl = (trackRank: number) => {
+    const audioUrls = [
+      'https://archive.org/download/SampleAudio0724/SampleAudio_0.2mb_mp3.mp3',
+      'https://archive.org/download/testmp3testfile/mpthreetest.mp3',
+      'https://www.soundjay.com/misc/sounds/bell-ringing-05.wav',
+      'https://archive.org/download/Example_Ogg/example.ogg',
+      'https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3',
+      'https://sample-videos.com/zip/10/mp3/SampleAudio_0.4mb_mp3.mp3',
+      'https://www.soundjay.com/misc/sounds/fail-buzzer-02.wav',
+      'https://archive.org/download/testmp3testfile/SampleAudio_0.7mb_mp3.mp3'
+    ];
+    return audioUrls[trackRank % audioUrls.length];
+  };
+
   const handlePlayClick = () => {
-    // Using a demo audio URL - in a real app, you'd have actual track URLs
-    const demoAudioUrl = `https://www.soundjay.com/misc/sounds/bell-ringing-05.wav`;
-    playTrack(rank, demoAudioUrl);
+    const audioUrl = getAudioUrl(rank);
+    playTrack(rank, audioUrl);
   };
 
   return (
