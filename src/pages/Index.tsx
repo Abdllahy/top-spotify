@@ -1,3 +1,4 @@
+
 import { Music } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
@@ -111,14 +112,14 @@ const tracks = [
 const Index = () => {
   const [showAll, setShowAll] = useState(false);
 
-  const visibleTracks = showAll ? tracks : tracks.slice(0, 10);
+  const visibleTracks = showAll ? tracks : tracks.slice(0, 12);
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-black flex flex-col">
       <Navbar />
       <HeroSection />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Top 100 Tracks 2024
@@ -142,7 +143,7 @@ const Index = () => {
         </div>
 
         <div className="flex justify-center mt-8">
-          {tracks.length > 10 && (
+          {tracks.length > 12 && (
             <button
               className="px-6 py-2 bg-green-500 text-white font-semibold rounded-md hover:bg-green-600 transition"
               onClick={() => setShowAll(!showAll)}
@@ -153,7 +154,7 @@ const Index = () => {
         </div>
       </div>
 
-      <footer className="bg-zinc-950 border-t border-zinc-800 py-12">
+      <footer className="bg-zinc-950 border-t border-zinc-800 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex items-center justify-center space-x-3 mb-4">
             <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
@@ -161,8 +162,11 @@ const Index = () => {
             </div>
             <span className="text-white font-bold text-xl">Top 100 Tracks 2024</span>
           </div>
-          <p className="text-zinc-400">
+          <p className="text-zinc-400 mb-1">
             Exploring the year's biggest musical moments through data and analysis
+          </p>
+          <p className="text-xs text-zinc-500 mt-4">
+            Made by Abdullahi Bashir 2025
           </p>
         </div>
       </footer>
@@ -171,3 +175,4 @@ const Index = () => {
 };
 
 export default Index;
+
