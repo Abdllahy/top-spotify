@@ -1,73 +1,64 @@
-# Welcome to your Lovable project
+# Spotify-Top-100-2024-Analysis
 
-## Project info
+## Project Overview  
+This repository contains Python scripts and data visualizations for analyzing the top 100 most popular songs on Spotify in 2024. The project examines trends in music duration, market availability, genre, and other audio-related features to uncover what makes a track successful. It is designed for data analysts, music marketers, and artists seeking data-backed insights into streaming success.
 
-**URL**: https://lovable.dev/projects/2562bc7f-5ce7-41f4-a851-1dc482bd9346
+## Goal  
+The goal of this project is to explore the underlying features that drive music popularity on Spotify. Inspired by the evolving nature of music consumption and data-driven curation, this project aims to identify patterns that define hit songs in 2024—filling a gap in understanding how factors like genre, availability, and audio characteristics contribute to streaming performance.
 
-## How can I edit this code?
+## Features  
+- Extraction of top 100 tracks from Spotify for the year 2024  
+- Collection of audio features like tempo, valence, energy, and duration  
+- Integration of artist genres for deeper musical profiling  
+- Cleaned and enriched dataset ready for analysis and visualization  
+- Multiple bivariate and multivariate charts using Seaborn and Matplotlib  
+- Analysis of track positions, available markets, and explicit content  
 
-There are several ways of editing your application.
+## Data  
+The dataset is extracted using Spotify’s Web API. It includes metadata for tracks released in 2024, such as:  
+- Track name, artist, album  
+- Release date and popularity score  
+- Duration (in ms), track number, disc number  
+- Explicit label, available markets  
+- Genre information (fetched per artist)
 
-**Use Lovable**
+Limitations:  
+Some genre information was initially missing and was manually filled where possible. Audio features like danceability or energy were unavailable for a few tracks due to Spotify API restrictions under certain authentication scopes.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/2562bc7f-5ce7-41f4-a851-1dc482bd9346) and start prompting.
+## Usage / Contribution  
+To replicate this analysis:  
+1. Clone this repo  
+2. Create a Spotify Developer App and replace `client_id`, `client_secret`, and `redirect_uri` in the script  
+3. Run `top_100_extractor.py` to fetch the dataset  
+4. Open `spotify_analysis.ipynb` to run and visualize the analysis  
 
-Changes made via Lovable will be committed automatically to this repo.
+**Requirements**:  
+- Python 3.9+  
+- `spotipy`, `pandas`, `matplotlib`, `seaborn`
 
-**Use your preferred IDE**
+## Project Structure  
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Technical Details  
+- Used Spotify’s Web API (Spotipy wrapper) for data collection  
+- Pandas for data manipulation  
+- Seaborn & Matplotlib for plotting charts  
+- Genres were fetched using `sp.artist()` calls  
+- Multivariate analysis included factors like duration, popularity, genre, and market reach
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Results & Insights  
+- Songs with broader market availability tend to have higher popularity scores  
+- Most popular tracks fall within 2.5 to 3.5 minutes in duration  
+- Genres like pop, hip-hop, and Afrobeats were dominant in 2024  
+- Track position (track number) shows mild influence on popularity  
+- Explicit content had no clear correlation with popularity
 
-Follow these steps:
+## Future Work  
+- Incorporate TikTok virality or YouTube views for cross-platform insights  
+- Add audio sentiment or lyrical analysis (via NLP)  
+- Create a live dashboard using Streamlit or Power BI  
+- Compare with Billboard or Apple Music charts
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/2562bc7f-5ce7-41f4-a851-1dc482bd9346) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## Contact / Support  
+For questions, reach out via:  
+📧 abyogia@gmail.com
+🌐 GitHub Issues tab  
