@@ -58,6 +58,50 @@ To replicate this analysis:
 - Create a live dashboard using Streamlit or Power BI  
 - Compare with Billboard or Apple Music charts
 
+## Spotify Top 100 Songs of 2024 Analysis – Project Assessment
+
+---
+
+### What is the problem you are solving?
+
+In today’s digital music era, artists, producers, and marketers struggle to understand what makes a song rise to the top of the charts. Is it the genre, release format, explicit content, or global availability?  
+This project aims to **decode the patterns and attributes** of the most popular songs on Spotify in 2024 to uncover **what truly influences success in the music industry**.
+
+---
+
+### 🛠️ What tools did you use?
+
+- **Python**: Core scripting language used to automate data extraction and analysis.
+- **Pandas**: For data wrangling, transformation, and filtering.
+- **Spotipy (Spotify API)**: To access real-time data on tracks, artists, and audio features.
+- **Matplotlib & Seaborn**: For clean and insightful data visualizations.
+- **Google Colab**: For running interactive notebooks in a cloud environment.
+
+---
+
+### What insights did you or do you want to discover?
+
+- **Clean songs** represent 64% of the Top 100, suggesting broader mainstream appeal.
+- **Optimal song length** for popularity ranges between **2.5 to 4 minutes**.
+- **Wider market availability does not guarantee higher popularity** — even songs in only 20 markets can trend if they resonate.
+- **Top artists** like Billie Eilish and Sabrina Carpenter dominate, with up to **7 tracks each**, highlighting the value of strong fanbases.
+- **Album vs. single releases** don’t strongly influence popularity — both formats perform similarly.
+
+These insights can **guide music industry stakeholders** toward more data-driven decisions.
+
+---
+
+### How would a business or community benefit from your work?
+
+- **Record labels & producers** can optimize releases for format, length, and content type based on what’s trending.
+- **Streaming platforms & marketers** gain insights into listener behavior, enabling better recommendation and promotion strategies.
+- **Aspiring musicians** can model their approach based on traits of successful tracks.
+- Overall, this project helps **reduce guesswork, improve ROI on campaigns, and increase the probability of chart success** through data.
+
+---
+
+## Read the Technical Analysis article
+Click here to read: https://abdullahybashir.hashnode.dev/uncovering-the-formula-behind-spotifys-top-100-songs-of-2024
 ## Contact / Support  
 For questions, reach out via:  
 📧 abyogia@gmail.com
