@@ -100,8 +100,12 @@ These insights can **guide music industry stakeholders** toward more data-driven
 
 ---
 
-## Read the Technical Analysis article
-Click here to read: https://abdullahybashir.hashnode.dev/uncovering-the-formula-behind-spotifys-top-100-songs-of-2024
+## Article and Website
+[Read the full article on Hashnode](https://abdullahybashir.hashnode.dev/uncovering-the-formula-behind-spotifys-top-100-songs-of-2024)
+[Interact with the website](https://top-spotify-silk.vercel.app/)
+
+---
+
 ## Contact / Support  
 For questions, reach out via:  
 📧 abyogia@gmail.com
