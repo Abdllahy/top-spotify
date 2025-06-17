@@ -78,8 +78,8 @@ const Analysis = () => {
             <h2 className="text-2xl font-semibold mb-6 text-white">Genre Distribution</h2>
             <div className="space-y-4">
               {topGenres.map((genre, index) => (
-                <div key={index} className="flex items-center justify-between">
-                  <span className="text-zinc-300 font-medium">{genre.name}</span>
+                <div key={index} className="flex items-center">
+                  <span className="text-zinc-300 font-medium w-20 text-left">{genre.name}</span>
                   <div className="flex items-center space-x-3 flex-1 ml-4">
                     <div className="flex-1 bg-zinc-800 rounded-full h-2">
                       <div 
@@ -146,7 +146,7 @@ const Analysis = () => {
           </div>
         </div>
 
-        {/* Canva embed section - no title, no labels */}
+        {/* Single Canva embed section */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 w-full">
           <div
             style={{
@@ -175,73 +175,7 @@ const Analysis = () => {
                 padding: 0,
                 margin: 0,
               }}
-              src="https://www.canva.com/design/DAGqcKtY2mQ/KmDqi3gym7VOhEovBfsnBA/view?embed"
-              allowFullScreen
-              allow="fullscreen"
-            ></iframe>
-          </div>
-          {/* Second Canva embed */}
-          <div
-            style={{
-              position: 'relative',
-              width: '100%',
-              height: 0,
-              paddingTop: '56.25%',
-              paddingBottom: 0,
-              boxShadow: '0 2px 8px 0 rgba(63,69,81,0.16)',
-              marginTop: '1.6em',
-              marginBottom: '0.9em',
-              overflow: 'hidden',
-              borderRadius: '8px',
-              willChange: 'transform',
-            }}
-          >
-            <iframe
-              loading="lazy"
-              style={{
-                position: 'absolute',
-                width: '100%',
-                height: '100%',
-                top: 0,
-                left: 0,
-                border: 'none',
-                padding: 0,
-                margin: 0,
-              }}
-              src="https://www.canva.com/design/DAGqcUPK5ic/MzAC795kq2iGvWrA8AxPZg/view?embed"
-              allowFullScreen
-              allow="fullscreen"
-            ></iframe>
-          </div>
-          {/* Third Canva embed (NEW as requested) */}
-          <div
-            style={{
-              position: 'relative',
-              width: '100%',
-              height: 0,
-              paddingTop: '56.25%',
-              paddingBottom: 0,
-              boxShadow: '0 2px 8px 0 rgba(63,69,81,0.16)',
-              marginTop: '1.6em',
-              marginBottom: '0.9em',
-              overflow: 'hidden',
-              borderRadius: '8px',
-              willChange: 'transform',
-            }}
-          >
-            <iframe
-              loading="lazy"
-              style={{
-                position: 'absolute',
-                width: '100%',
-                height: '100%',
-                top: 0,
-                left: 0,
-                border: 'none',
-                padding: 0,
-                margin: 0,
-              }}
-              src="https://www.canva.com/design/DAGqcwLIcLg/ifxvgPLHj_LEC_m8pQbqeA/view?embed"
+              src="https://www.canva.com/design/DAGqoaAJD4g/4PYBBMqoerBN2j2c5P0B8g/view?embed"
               allowFullScreen
               allow="fullscreen"
             ></iframe>
@@ -249,6 +183,24 @@ const Analysis = () => {
         </section>
 
       </div>
+
+      {/* Footer */}
+      <footer className="bg-zinc-950 border-t border-zinc-800 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="flex items-center justify-center space-x-3 mb-4">
+            <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+              <Music className="w-5 h-5 text-black" />
+            </div>
+            <span className="text-white font-bold text-xl">Top 100 Tracks 2024</span>
+          </div>
+          <p className="text-zinc-400 mb-1">
+            Exploring the year's biggest musical moments through data and analysis
+          </p>
+          <p className="text-xs text-zinc-500 mt-4">
+            Made by Abdullahi Bashir 2025
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };
