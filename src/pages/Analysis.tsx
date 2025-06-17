@@ -193,9 +193,26 @@ const Analysis = () => {
             </div>
             <span className="text-white font-bold text-xl">Top 100 Tracks 2024</span>
           </div>
-          <p className="text-zinc-400 mb-1">
+          <p className="text-zinc-400 mb-4">
             Exploring the year's biggest musical moments through data and analysis
           </p>
+          
+          {/* Contact Details */}
+          <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-6 mb-4">
+            <a href="mailto:your-email@example.com" className="text-zinc-400 hover:text-green-400 transition-colors">
+              Email: your-email@example.com
+            </a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-green-400 transition-colors">
+              LinkedIn
+            </a>
+            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-green-400 transition-colors">
+              GitHub
+            </a>
+            <a href="https://hashbode.com" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-green-400 transition-colors">
+              Hashbode
+            </a>
+          </div>
+          
           <p className="text-xs text-zinc-500 mt-4">
             Made by Abdullahi Bashir 2025
           </p>

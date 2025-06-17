@@ -120,16 +120,7 @@ const Index = () => {
       <HeroSection />
 
       <div className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Top 100 Tracks 2024
-          </h2>
-          <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
-            The complete list of 2024's most popular songs across all genres
-          </p>
-        </div>
-
-        {/* New Canva embed above tracks list */}
+        {/* New Canva embed above title */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 w-full">
           <div
             style={{
@@ -165,6 +156,16 @@ const Index = () => {
           </div>
         </section>
 
+        {/* Title moved below the Canva embed */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Top 100 Tracks 2024
+          </h2>
+          <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
+            The complete list of 2024's most popular songs across all genres
+          </p>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {visibleTracks.map((track) => (
             <TrackCard
@@ -190,7 +191,7 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Canva embed section - no title, no labels */}
+      {/* Second Canva embed section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 w-full">
         <div
           style={{
@@ -234,9 +235,26 @@ const Index = () => {
             </div>
             <span className="text-white font-bold text-xl">Top 100 Tracks 2024</span>
           </div>
-          <p className="text-zinc-400 mb-1">
+          <p className="text-zinc-400 mb-4">
             Exploring the year's biggest musical moments through data and analysis
           </p>
+          
+          {/* Contact Details */}
+          <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-6 mb-4">
+            <a href="mailto:your-email@example.com" className="text-zinc-400 hover:text-green-400 transition-colors">
+              Email: your-email@example.com
+            </a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-green-400 transition-colors">
+              LinkedIn
+            </a>
+            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-green-400 transition-colors">
+              GitHub
+            </a>
+            <a href="https://hashbode.com" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-green-400 transition-colors">
+              Hashbode
+            </a>
+          </div>
+          
           <p className="text-xs text-zinc-500 mt-4">
             Made by Abdullahi Bashir 2025
           </p>
