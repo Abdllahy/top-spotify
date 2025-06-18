@@ -1,4 +1,3 @@
-
 import { BarChart3, TrendingUp, Users, Music } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 
@@ -56,7 +55,6 @@ const Analysis = () => {
           </p>
         </div>
 
-        {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {stats.map((stat, index) => {
             const Icon = stat.icon;
@@ -73,7 +71,6 @@ const Analysis = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Genre Distribution */}
           <div className="bg-zinc-900/50 rounded-xl p-6 border border-zinc-800">
             <h2 className="text-2xl font-semibold mb-6 text-white">Genre Distribution</h2>
             <div className="space-y-4">
@@ -94,7 +91,6 @@ const Analysis = () => {
             </div>
           </div>
 
-          {/* Key Insights */}
           <div className="bg-zinc-900/50 rounded-xl p-6 border border-zinc-800">
             <h2 className="text-2xl font-semibold mb-6 text-white">Key Insights</h2>
             <div className="space-y-4">
@@ -116,7 +112,6 @@ const Analysis = () => {
           </div>
         </div>
 
-        {/* Trends Section */}
         <div className="mt-12 bg-zinc-900/50 rounded-xl p-6 border border-zinc-800">
           <h2 className="text-2xl font-semibold mb-6 text-white">2024 Music Trends</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -146,7 +141,6 @@ const Analysis = () => {
           </div>
         </div>
 
-        {/* Single Canva embed section */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 w-full">
           <div
             style={{
@@ -184,7 +178,6 @@ const Analysis = () => {
 
       </div>
 
-      {/* Footer */}
       <footer className="bg-zinc-950 border-t border-zinc-800 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex items-center justify-center space-x-3 mb-4">
@@ -197,19 +190,18 @@ const Analysis = () => {
             Exploring the year's biggest musical moments through data and analysis
           </p>
           
-          {/* Contact Details */}
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-6 mb-4">
-            <a href="mailto:your-email@example.com" className="text-zinc-400 hover:text-green-400 transition-colors">
-              Email: your-email@example.com
+            <a href="mailto:abyogia@gmail.com" className="text-zinc-400 hover:text-green-400 transition-colors">
+              Email: abyogia@gmail.com
             </a>
-            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-green-400 transition-colors">
+            <a href="https://www.linkedin.com/in/abdullahi-bashir-74256b2b5/" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-green-400 transition-colors">
               LinkedIn
             </a>
             <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-green-400 transition-colors">
               GitHub
             </a>
-            <a href="https://hashbode.com" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-green-400 transition-colors">
-              Hashbode
+            <a href="https://abdullahybashir.hashnode.dev/uncovering-the-formula-behind-spotifys-top-100-songs-of-2024" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-green-400 transition-colors">
+              Hashnode
             </a>
           </div>
           

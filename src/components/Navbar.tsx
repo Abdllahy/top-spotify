@@ -14,12 +14,12 @@ const Navbar = () => {
     <nav className="bg-black/95 backdrop-blur-sm border-b border-zinc-800 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center space-x-3">
+          <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
             <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
               <Music className="w-5 h-5 text-black" />
             </div>
             <span className="text-white font-bold text-xl">Top 100 Tracks 2024</span>
-          </div>
+          </Link>
           
           <div className="flex space-x-8">
             {navItems.map((item) => {

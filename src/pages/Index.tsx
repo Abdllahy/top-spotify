@@ -1,4 +1,3 @@
-
 import { Music } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
@@ -120,7 +119,7 @@ const Index = () => {
       <HeroSection />
 
       <div className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {/* New Canva embed above title */}
+        {/* Canva embed above title */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 w-full">
           <div
             style={{
@@ -241,17 +240,17 @@ const Index = () => {
           
           {/* Contact Details */}
           <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-6 mb-4">
-            <a href="mailto:your-email@example.com" className="text-zinc-400 hover:text-green-400 transition-colors">
-              Email: your-email@example.com
+            <a href="mailto:abyogia@gmail.com" className="text-zinc-400 hover:text-green-400 transition-colors">
+              Email: abyogia@gmail.com
             </a>
-            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-green-400 transition-colors">
+            <a href="https://www.linkedin.com/in/abdullahi-bashir-74256b2b5/" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-green-400 transition-colors">
               LinkedIn
             </a>
             <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-green-400 transition-colors">
               GitHub
             </a>
-            <a href="https://hashbode.com" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-green-400 transition-colors">
-              Hashbode
+            <a href="https://abdullahybashir.hashnode.dev/uncovering-the-formula-behind-spotifys-top-100-songs-of-2024" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-green-400 transition-colors">
+              Hashnode
             </a>
           </div>
           
