@@ -1,3 +1,4 @@
+
 import { Music } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
@@ -161,7 +162,7 @@ const Index = () => {
             style={{borderRadius: '12px'}} 
             src="https://open.spotify.com/embed/playlist/37i9dQZF1DX18jTM2l2fJY?utm_source=generator" 
             width="100%" 
-            height="352" 
+            height="500" 
             frameBorder="0" 
             allowFullScreen 
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
