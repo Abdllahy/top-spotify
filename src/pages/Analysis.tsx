@@ -1,3 +1,4 @@
+
 import { BarChart3, TrendingUp, Users, Music } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 
@@ -197,7 +198,7 @@ const Analysis = () => {
             <a href="https://www.linkedin.com/in/abdullahi-bashir-74256b2b5/" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-green-400 transition-colors">
               LinkedIn
             </a>
-            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-green-400 transition-colors">
+            <a href="https://github.com/Abdllahy/top-spotify" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-green-400 transition-colors">
               GitHub
             </a>
             <a href="https://abdullahybashir.hashnode.dev/uncovering-the-formula-behind-spotifys-top-100-songs-of-2024" target="_blank" rel="noopener noreferrer" className="text-zinc-400 hover:text-green-400 transition-colors">
