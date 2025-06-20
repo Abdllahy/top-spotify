@@ -1,4 +1,3 @@
-
 import { BarChart3, TrendingUp, Users, Music } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 
@@ -112,6 +111,41 @@ const Analysis = () => {
             </div>
           </div>
         </div>
+
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 w-full">
+          <div
+            style={{
+              position: 'relative',
+              width: '100%',
+              height: 0,
+              paddingTop: '56.2500%',
+              paddingBottom: 0,
+              boxShadow: '0 2px 8px 0 rgba(63,69,81,0.16)',
+              marginTop: '1.6em',
+              marginBottom: '0.9em',
+              overflow: 'hidden',
+              borderRadius: '8px',
+              willChange: 'transform',
+            }}
+          >
+            <iframe
+              loading="lazy"
+              style={{
+                position: 'absolute',
+                width: '100%',
+                height: '100%',
+                top: 0,
+                left: 0,
+                border: 'none',
+                padding: 0,
+                margin: 0,
+              }}
+              src="https://www.canva.com/design/DAGq4cvtzt0/1e6aOUg6TSf4E2RLJnR4OA/view?embed"
+              allowFullScreen
+              allow="fullscreen"
+            ></iframe>
+          </div>
+        </section>
 
         <div className="mt-12 bg-zinc-900/50 rounded-xl p-6 border border-zinc-800">
           <h2 className="text-2xl font-semibold mb-6 text-white">2024 Music Trends</h2>

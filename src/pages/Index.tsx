@@ -1,4 +1,3 @@
-
 import { Music } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
@@ -154,6 +153,20 @@ const Index = () => {
               allow="fullscreen"
             ></iframe>
           </div>
+        </section>
+
+        {/* Spotify Playlist embed */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 w-full">
+          <iframe 
+            style={{borderRadius: '12px'}} 
+            src="https://open.spotify.com/embed/playlist/37i9dQZF1DX18jTM2l2fJY?utm_source=generator" 
+            width="100%" 
+            height="352" 
+            frameBorder="0" 
+            allowFullScreen 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy"
+          ></iframe>
         </section>
 
         {/* Title moved below the Canva embed */}
